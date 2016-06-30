@@ -1,0 +1,20 @@
+﻿<div class="page-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12">
+                <h1>I'm hungry!</h1>
+                <h4>Where do you want to eat?</h4>
+            </div>
+        </div>
+
+        <div class="row" *ngIf="!restaurants">
+            ~Contacting mothership, please stand by~
+        </div>
+
+        <div *ngIf="restaurants">
+            <div class="row" *ngFor="let place of restaurants">
+                <div class="col-xs-12">{{place.name}}</div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>@ViewData["Title"] - Time 2 Eat</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,600,700" rel="stylesheet" type="text/css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css" rel="stylesheet" type="text/css">
+
+    <environment names="Development">
+        <link rel="stylesheet" href="~/css/vendor.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/css/app.css" asp-append-version="true" />
+    </environment>
+    <environment names="Staging,Production">
+        <link rel="stylesheet" href="~/css/vendor.min.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/css/app.min.css" asp-append-version="true" />
+    </environment>
+    @Html.ApplicationInsightsJavaScript(TelemetryConfiguration)
+</head>
+<body>
+    <!-- 1. Load libraries -->
+    <!-- Polyfill(s) for older browsers -->
+    <script src="~/js/shim.min.js" asp-append-version="true"></script>
+    <script src="~/js/zone.min.js" asp-append-version="true"></script>
+    <script src="~/js/Reflect.js" asp-append-version="true"></script> <!-- TODO: Use minified version in production -->
+    <script src="~/js/system.js" asp-append-version="true"></script> <!-- TODO: Use minified version in production -->
+
+    <!-- 2. Configure SystemJS -->
+    <script>
+        System.config({
+            baseURL: '/js',
+            defaultJSExtensions: true,
+            packages: {
+                app: {
+                    format: 'register',
+                    defaultExtension: 'js'
+                },
+                '@@angular': {
+                    format: 'cjs',
+                    defaultExtension: 'umd.min.js'
+                }
+            }
+        });
+    </script>
+
+    <script src="~/js/Rx.js" asp-append-version="true"></script>       <!-- TODO: Use minified version in production -->
+    <script src="~/js/vendor.js" asp-append-version="true"></script>   <!-- TODO: Use minified version in production -->
+    <script src="~/js/app/main.js" asp-append-version="true"></script> <!-- TODO: Use minified version in production -->
+    <script>
+        System.import('main').catch(function(err){ console.error(err); });
+    </script>
+
+    @RenderBody()
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

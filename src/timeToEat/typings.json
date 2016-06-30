@@ -1,0 +1,7 @@
+﻿{
+  "ambientDependencies": {
+    "es6-shim": "github:DefinitelyTyped/DefinitelyTyped/es6-shim/es6-shim.d.ts#6697d6f7dadbf5773cb40ecda35a76027e0783b2",
+    "globalize": "github:DefinitelyTyped/DefinitelyTyped/globalize/globalize.d.ts#db49859709bd898979beb8c3ac266dee46f4b54e",
+    "jquery": "github:DefinitelyTyped/DefinitelyTyped/jquery/jquery.d.ts"    
+  }
+}
